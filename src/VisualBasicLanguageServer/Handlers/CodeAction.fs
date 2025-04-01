@@ -21,7 +21,7 @@ open VisualBasicLanguageServer.Conversions
 open VisualBasicLanguageServer.Types
 open VisualBasicLanguageServer.State
 
-type CSharpCodeActionResolutionData =
+type VisualBasicCodeActionResolutionData =
     { TextDocumentUri: string
       Range: Range }
 
@@ -32,7 +32,7 @@ module CodeAction =
     let private instantiateRoslynProviders<'ProviderType> (isValidProvider: Type -> bool) =
         let assemblies =
             [ "Microsoft.CodeAnalysis.Features"
-              "Microsoft.CodeAnalysis.CSharp.Features"
+              "Microsoft.CodeAnalysis.VisualBasic.Features"
               "Microsoft.CodeAnalysis.Workspaces"
             ]
             |> Seq.map Assembly.Load
@@ -348,7 +348,7 @@ module CodeAction =
                 match clientSupportsCodeActionEditResolveWithEditAndData with
                 | true -> async {
                     let toUnresolvedLspCodeAction (ca: Microsoft.CodeAnalysis.CodeActions.CodeAction) =
-                        let resolutionData: CSharpCodeActionResolutionData =
+                        let resolutionData: VisualBasicCodeActionResolutionData =
                             { TextDocumentUri = p.TextDocument.Uri
                               Range = p.Range }
 
@@ -395,7 +395,7 @@ module CodeAction =
     let resolve (context: ServerRequestContext) (p: CodeAction) : AsyncLspResult<CodeAction option> = async {
         let resolutionData =
             p.Data
-            |> Option.map deserialize<CSharpCodeActionResolutionData>
+            |> Option.map deserialize<VisualBasicCodeActionResolutionData>
 
         match context.GetDocument resolutionData.Value.TextDocumentUri with
         | None -> return None |> success
