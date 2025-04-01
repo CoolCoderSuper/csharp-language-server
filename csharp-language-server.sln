@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3ADA171B-D93F-4D34-97EA-5BB06662678B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CSharpLanguageServer", "src\CSharpLanguageServer\CSharpLanguageServer.fsproj", "{228A59AD-2E4C-4DF4-AC5E-1F126A4FFF02}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "VisualBasicLanguageServer", "src\VisualBasicLanguageServer\VisualBasicLanguageServer.fsproj", "{228A59AD-2E4C-4DF4-AC5E-1F126A4FFF02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{35DF1A49-B49A-42CB-B43B-8E8120AD9B0E}"
 EndProject

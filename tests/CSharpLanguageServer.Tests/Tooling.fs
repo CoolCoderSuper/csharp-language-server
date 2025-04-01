@@ -1,4 +1,4 @@
-module CSharpLanguageServer.Tests.Tooling
+module VisualBasicLanguageServer.Tests.Tooling
 
 open System
 open System.Collections.Generic
