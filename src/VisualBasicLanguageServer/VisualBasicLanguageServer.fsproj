@@ -7,12 +7,12 @@
     <Description>VisualBasic LSP language server</Description>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>vb-ls</ToolCommandName>
-    <Authors>Saulius Menkevičius</Authors>
+    <Authors>Joseph Guenther; Saulius Menkevičius</Authors>
     <PackageOutputPath>./nupkg</PackageOutputPath>
     <PackageId>vb-ls</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>vb;lsp;roslyn</PackageTags>
-    <PackageProjectUrl>https://github.com/razzmatazz/csharp-language-server</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/CoolCoderSuper/visualbasic-language-server</PackageProjectUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <ChangelogFile>CHANGELOG.md</ChangelogFile>

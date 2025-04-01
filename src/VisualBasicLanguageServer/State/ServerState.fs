@@ -437,9 +437,9 @@ let serverEventLoop initialState (inbox: MailboxProcessor<ServerStateEvent>) =
     loop initialState
 
 type ServerSettingsDto = {
-     csharp: ServerSettingsCSharpDto option
+     vb: ServerSettingsVisualBasicDto option
 }
-and ServerSettingsCSharpDto =
+and ServerSettingsVisualBasicDto =
     {
         solution: string option
         applyFormattingOptions: bool

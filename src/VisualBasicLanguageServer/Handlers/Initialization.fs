@@ -144,7 +144,7 @@ module Initialization =
                 let newSettingsMaybe =
                   match vbConfigTokensMaybe with
                   | Some [| t |] ->
-                      let vbSettingsMaybe = t |> deserialize<ServerSettingsCSharpDto option>
+                      let vbSettingsMaybe = t |> deserialize<ServerSettingsVisualBasicDto option>
 
                       match vbSettingsMaybe with
                       | Some vbSettings ->

@@ -109,8 +109,8 @@ module Workspace =
         let csharpSettings =
             configParams.Settings
             |> deserialize<ServerSettingsDto>
-            |> (fun x -> x.csharp)
-            |> Option.defaultValue ServerSettingsCSharpDto.Default
+            |> (fun x -> x.vb)
+            |> Option.defaultValue ServerSettingsVisualBasicDto.Default
 
         let newServerSettings = {
             context.State.Settings with
