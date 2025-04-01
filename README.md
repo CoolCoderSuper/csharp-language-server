@@ -7,8 +7,6 @@ to work with projects using older versions of dotnet SDK, including .NET Core 3,
 .NET Framework 4.8 and possibly older ones too as it uses the standard
 Roslyn/MSBuild libs that Visual Studio & omnisharp does.
 
-See [CHANGELOG.md](CHANGELOG.md) for the list of recent improvements/fixes.
-
 # Acknowledgements
 - vb-ls is not affiliated with Microsoft Corp;
 - vb-ls uses LSP interface from [Ionide.LanguageServerProtocol](https://github.com/ionide/LanguageServerProtocol);
