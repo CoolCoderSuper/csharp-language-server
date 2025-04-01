@@ -296,15 +296,20 @@ module CodeAction =
         |> Option.bind (fun x -> x.CodeActionLiteralSupport)
 
     let provider (clientCapabilities: ClientCapabilities) : U2<bool, CodeActionOptions> option =
-        match dynamicRegistration clientCapabilities, literalSupport clientCapabilities with
-        | true, _ -> None
-        | false, _ ->
-            // TODO: Server can only return CodeActionOptions if literalSupport is not None
-            { CodeActionKinds = None
-              ResolveProvider = Some true
-              WorkDoneProgress = None }
-            |> U2.C2
-            |> Some
+        { CodeActionKinds = None
+          ResolveProvider = Some true
+          WorkDoneProgress = None }
+        |> U2.C2
+        |> Some
+        //match dynamicRegistration clientCapabilities, literalSupport clientCapabilities with
+        //| true, _ -> None
+        //| false, _ ->
+        //    // TODO: Server can only return CodeActionOptions if literalSupport is not None
+        //    { CodeActionKinds = None
+        //      ResolveProvider = Some true
+        //      WorkDoneProgress = None }
+        //    |> U2.C2
+        //    |> Some
 
     let registration (clientCapabilities: ClientCapabilities) : Registration option =
         match dynamicRegistration clientCapabilities with
