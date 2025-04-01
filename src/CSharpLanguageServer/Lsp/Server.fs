@@ -119,7 +119,7 @@ type CSharpLspServer(
               FoldingRange.registration
               Hover.registration
               Implementation.registration
-              InlayHint.registration
+              //InlayHint.registration
               InlineValue.registration
               LinkedEditingRange.registration
               Moniker.registration
@@ -174,7 +174,7 @@ type CSharpLspServer(
                     // MonikerProvider = Moniker.provider lspClient.Capabilities
                     TypeHierarchyProvider = TypeHierarchy.provider lspClient.Capabilities
                     // InlineValueProvider = InlineValue.provider lspClient.Capabilities
-                    InlayHintProvider = InlayHint.provider lspClient.Capabilities
+                    // InlayHintProvider = InlayHint.provider lspClient.Capabilities
                     DiagnosticProvider = Diagnostic.provider lspClient.Capabilities
                     WorkspaceSymbolProvider = WorkspaceSymbol.provider lspClient.Capabilities }
 
@@ -330,10 +330,12 @@ type CSharpLspServer(
             p |> withReadOnlyContext SemanticTokens.handleRange
 
         override this.TextDocumentInlayHint(p) =
-            p |> withReadOnlyContext InlayHint.handle
+            notImplemented
+            //p |> withReadOnlyContext InlayHint.handle
 
         override this.InlayHintResolve(p) =
-            p |> withReadOnlyContext InlayHint.resolve
+            notImplemented
+            //p |> withReadOnlyContext InlayHint.resolve
 
         override __.WorkDoneProgressCancel(p) = ignoreNotification
 

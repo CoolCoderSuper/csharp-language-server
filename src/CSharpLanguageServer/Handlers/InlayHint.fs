@@ -4,8 +4,8 @@ open System
 open System.Collections.Immutable
 
 open Microsoft.CodeAnalysis
-open Microsoft.CodeAnalysis.CSharp
-open Microsoft.CodeAnalysis.CSharp.Syntax
+open Microsoft.CodeAnalysis.VisualBasic
+open Microsoft.CodeAnalysis.VisualBasic.Syntax
 open Microsoft.CodeAnalysis.Text
 open Ionide.LanguageServerProtocol.Server
 open Ionide.LanguageServerProtocol.Types
@@ -127,8 +127,8 @@ module InlayHint =
         // If Roslyn exposes the classes, then we can just do a type convert.
         // TODO: Support the configuration whether or not to show some kinds of inlay hints.
         match node with
-        | :? VariableDeclarationSyntax as var when
-            var.Type.IsVar && var.Variables.Count = 1 && not var.Variables[0].Identifier.IsMissing
+        | :? VariableDeclaratorSyntax as var when
+            var.AsClause.Type && not var.Identifier.IsMissing
             ->
             semanticModel.GetTypeInfo(var.Type).Type
             |> validateType

@@ -455,8 +455,8 @@ let prepareTempTestDirFrom (sourceTestDir: DirectoryInfo) : string =
 
     let fileFilter (file: FileInfo) =
         file.Name = ".editorconfig"
-            || file.Extension = ".cs"
-            || file.Extension = ".csproj"
+            || file.Extension = ".vb"
+            || file.Extension = ".vbproj"
             || file.Extension = ".sln"
             || file.Extension = ".cshtml"
             || file.Extension = ".txt"
