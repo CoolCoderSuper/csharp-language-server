@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All"/>
-    <PackageReference Include="Ionide.KeepAChangelog.Tasks" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
