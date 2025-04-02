@@ -29,7 +29,7 @@ module Workspace =
         | false -> None
         | true ->
             let fileSystemWatcher =
-                { GlobPattern = U2.C1 "**/*.{vb,vbproj,sln}"
+                { GlobPattern = U2.C1 "**/*.{vb,vbproj,sln,slnx}"
                   Kind = Some (WatchKind.Create ||| WatchKind.Change ||| WatchKind.Delete) }
 
             let registerOptions: DidChangeWatchedFilesRegistrationOptions =
@@ -83,7 +83,7 @@ module Workspace =
                 do! context.WindowShowMessage "change to .vbproj detected, will reload solution"
                 context.Emit(SolutionReloadRequest (TimeSpan.FromSeconds(5)))
 
-            | ".sln" ->
+            | ".sln" | ".slnx" ->
                 do! context.WindowShowMessage "change to .sln detected, will reload solution"
                 context.Emit(SolutionReloadRequest (TimeSpan.FromSeconds(5)))
 
@@ -106,7 +106,7 @@ module Workspace =
                                (configParams: DidChangeConfigurationParams)
             : Async<LspResult<unit>> = async {
 
-        let csharpSettings =
+        let vbSettings =
             configParams.Settings
             |> deserialize<ServerSettingsDto>
             |> (fun x -> x.vb)
@@ -114,8 +114,8 @@ module Workspace =
 
         let newServerSettings = {
             context.State.Settings with
-                SolutionPath = csharpSettings.solution
-                ApplyFormattingOptions = csharpSettings.applyFormattingOptions
+                SolutionPath = vbSettings.solution
+                ApplyFormattingOptions = vbSettings.applyFormattingOptions
         }
 
         context.Emit(SettingsChange newServerSettings)

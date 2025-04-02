@@ -36,7 +36,7 @@ NeoVim 0.11+ can easily be configured using the `vim.lsp.config` api.
 ```lua
 vim.lsp.config['vb_ls'] = {
     cmd = { 'vb-ls' },
-    root_markers = { '*.sln', '*.vbproj' },
+    root_markers = { '*.sln', '*.slnx', '*.vbproj' },
     filetypes = { 'vbnet' },
     init_options = {
       AutomaticWorkspaceInit = true,

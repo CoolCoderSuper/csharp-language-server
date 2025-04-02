@@ -30,7 +30,7 @@ module Initialization =
 
         context.Emit(ClientChange (Some lspClient))
 
-        let serverName = "csharp-ls"
+        let serverName = "vb-ls"
         let serverVersion = Assembly.GetExecutingAssembly().GetName().Version |> string
         logger.info (
             Log.setMessage "initializing, {name} version {version}"
@@ -39,7 +39,7 @@ module Initialization =
         )
 
         do! windowShowMessage(
-            sprintf "csharp-ls: initializing, version %s" serverVersion)
+            sprintf "vb-ls: initializing, version %s" serverVersion)
 
         logger.info (
             Log.setMessage "{name} is released under MIT license and is not affiliated with Microsoft Corp.; see https://github.com/razzmatazz/csharp-language-server"
@@ -47,7 +47,7 @@ module Initialization =
         )
 
         do! windowShowMessage(
-            sprintf "csharp-ls: %s is released under MIT license and is not affiliated with Microsoft Corp.; see https://github.com/razzmatazz/csharp-language-server" serverName)
+            sprintf "vb-ls: %s is released under MIT license and is not affiliated with Microsoft Corp.; see https://github.com/razzmatazz/csharp-language-server" serverName)
 
         let vsInstanceQueryOpt = VisualStudioInstanceQueryOptions.Default
         let vsInstanceList = MSBuildLocator.QueryVisualStudioInstances(vsInstanceQueryOpt)

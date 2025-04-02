@@ -458,6 +458,7 @@ let prepareTempTestDirFrom (sourceTestDir: DirectoryInfo) : string =
             || file.Extension = ".vb"
             || file.Extension = ".vbproj"
             || file.Extension = ".sln"
+            || file.Extension = ".slnx"
             || file.Extension = ".vbhtml"
             || file.Extension = ".txt"
 

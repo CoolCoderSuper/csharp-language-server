@@ -403,8 +403,8 @@ module Server =
 
     let private customRequestHandlings =
         // Compiler of F# can't infer the type of `s` in `"csharp/metadata", serverRequestHandling (fun s p -> s.CSharpMetadata(p))`
-        // to `ICSharpLspServer` even if we have written the type of `customRequestHandlings` to
-        // `Map<string, ServerRequestHandling<ICSharpLspServer>>`. So write a helper function to avoid write the type of `s` every time.
+        // to `IVisualBasicLspServer` even if we have written the type of `customRequestHandlings` to
+        // `Map<string, ServerRequestHandling<IVisualBasicLspServer>>`. So write a helper function to avoid write the type of `s` every time.
         let requestHandling
             (run: IVisualBasicLspServer -> 'param -> AsyncLspResult<'result>)
             : ServerRequestHandling<IVisualBasicLspServer> =
